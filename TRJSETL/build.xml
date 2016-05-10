@@ -1,0 +1,73 @@
+<project name="TRJSETL" default="dist" basedir=".">
+
+    <property name="src" location="src" />
+    <property name="lib" location="lib" />
+    <property name="build" location="bin" />
+    <property name="dist" location="dist" />
+    <property name="ETL" location="TRJSETL" />
+    <property name="distlib" location="${dist}/lib" />
+    <property name="jarName" value="TRJSETL" />
+
+    <path id="classpath">
+        <fileset dir="${lib}">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+	<target name="clean" description="clean up">
+	    <delete file="${dist}/${jarName}.jar" />
+		<delete dir="${dist}/lib" />
+	</target>
+    <target name="init" depends="clean">
+        <tstamp />
+        <mkdir dir="${build}" />
+        <mkdir dir="${dist}" />
+    </target>
+
+    <target name="compile" depends="init" description="compile the source ">
+        <javac srcdir="${src}" destdir="${build}" encoding="UTF-8">
+            <classpath refid="classpath" />
+        </javac>
+    	<copy todir="${build}" preservelastmodified="true">
+            <fileset dir="${src}">
+            	<include name="*.properties"/>
+            	<include name="*.xml"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="dist" depends="compile" description="generate the distribution">
+        <mkdir dir="${dist}" />
+        <mkdir dir="${distlib}" />
+        <copy todir="${distlib}" preservelastmodified="true">
+            <fileset dir="${lib}">
+            </fileset>
+        </copy>
+        <manifestclasspath property="jar.classpath" jarfile="${dist}/${jarName}.jar">
+            <classpath>
+                <fileset dir="${distlib}">
+                    <include name="**/*.jar" />
+                </fileset>
+            </classpath>
+        </manifestclasspath>
+        <manifest file="${build}/MANIFEST.MF">
+            <attribute name="Main-Class" value="com.trjs.Main" />
+            <attribute name="Class-Path" value="${jar.classpath}" />
+        </manifest>
+        <jar jarfile="${dist}/${jarName}.jar" basedir="${build}" manifest="${build}/MANIFEST.MF">
+             <exclude name="MANIFEST.MF"/>
+        </jar>
+        <copy todir="${ETL}" file="${dist}/${jarName}.jar" />
+        <!-- <copy todir="${ETL}" file="${src}/trjssjfx.ini" /> -->
+    </target>
+
+    <target name="create_doc" depends="dist">
+        <mkdir dir="${javadoc_dist}" />
+        <javadoc destdir="${javadoc_dist}" encoding="UTF-8" docencoding="UTF-8">
+            <classpath refid="classpath" />
+            <link href="http://java.sun.com/j2se/1.6.0/docs/api/" />
+            <link href="http://docs.oracle.com/javaee/5/api/" />
+            <bottom>
+                <![CDATA[<i>Copyright &#169; 2012 Hisense Corp. All Rights Reserved.</i>]]></bottom>
+	    </javadoc>
+	</target>
+</project>

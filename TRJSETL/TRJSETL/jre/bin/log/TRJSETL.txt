@@ -1,0 +1,28 @@
+2016-03-21 19:42:07,739 [AWT-EventQueue-0] INFO  java.lang.Class                          -   点击停止，退出任务
+2016-03-21 19:42:29,770 [AWT-EventQueue-0] INFO  java.lang.Class                          -   点击停止，退出任务
+2016-03-21 19:44:02,500 [AWT-EventQueue-0] INFO  java.lang.Class                          -filePath:F:/workspace/TRJSETL/dist/
+2016-03-21 19:44:02,510 [AWT-EventQueue-0] INFO  java.lang.Class                          -hand flag:
+2016-03-21 19:44:02,510 [AWT-EventQueue-0] INFO  java.lang.Class                          -hand flag:
+2016-03-21 19:44:02,520 [AWT-EventQueue-0] INFO  java.lang.Class                          -datasource configuration complete.
+2016-03-21 19:44:02,960 [AWT-EventQueue-0] INFO  java.lang.Class                          -   开始执行定时抽取数据表任务
+2016-03-21 19:44:02,960 [AWT-EventQueue-0] INFO  java.lang.Class                          ---advance_area_bak表开始导出--
+2016-03-21 19:44:02,970 [AWT-EventQueue-0] INFO  java.lang.Class                          -   select id,areaname,value from advance_area_bak 
+2016-03-21 19:44:03,070 [AWT-EventQueue-0] INFO  java.lang.Class                          ---执行定时抽取数据表任务已结束--
+2016-03-21 19:44:03,070 [AWT-EventQueue-0] INFO  java.lang.Class                          -advance_area_bak表共导出198条数据;用时110ms.
+2016-03-21 19:44:03,070 [AWT-EventQueue-0] INFO  java.lang.Class                          -   开始执行定时抽取数据表任务
+2016-03-21 19:44:03,070 [AWT-EventQueue-0] INFO  java.lang.Class                          ---enum_type111表开始导出--
+2016-03-21 19:44:03,070 [AWT-EventQueue-0] INFO  java.lang.Class                          -   select enumtypeid,enumvalue,enumname from enum_type where enumtypeid='111'
+2016-03-21 19:44:03,090 [AWT-EventQueue-0] INFO  java.lang.Class                          ---执行定时抽取数据表任务已结束--
+2016-03-21 19:44:03,090 [AWT-EventQueue-0] INFO  java.lang.Class                          -enum_type111表共导出16条数据;用时20ms.
+2016-03-21 19:44:03,090 [AWT-EventQueue-0] INFO  java.lang.Class                          -   开始执行定时抽取数据表任务
+2016-03-21 19:44:03,090 [AWT-EventQueue-0] INFO  java.lang.Class                          ---enum_operator表开始导出--
+2016-03-21 19:44:03,090 [AWT-EventQueue-0] INFO  java.lang.Class                          -   select nuserid,cusername from operator 
+2016-03-21 19:44:03,190 [AWT-EventQueue-0] INFO  java.lang.Class                          ---执行定时抽取数据表任务已结束--
+2016-03-21 19:44:03,190 [AWT-EventQueue-0] INFO  java.lang.Class                          -enum_operator表共导出649条数据;用时100ms.
+2016-03-21 19:44:03,190 [AWT-EventQueue-0] INFO  java.lang.Class                          -   开始执行定时抽取数据表任务
+2016-03-21 19:44:03,190 [AWT-EventQueue-0] INFO  java.lang.Class                          ---enum_type120表开始导出--
+2016-03-21 19:44:03,190 [AWT-EventQueue-0] INFO  java.lang.Class                          -   select enumtypeid,enumvalue,enumname from enum_type where enumtypeid='120'
+2016-03-21 19:44:03,190 [AWT-EventQueue-0] INFO  java.lang.Class                          ---执行定时抽取数据表任务已结束--
+2016-03-21 19:44:03,190 [AWT-EventQueue-0] INFO  java.lang.Class                          -enum_type120表共导出5条数据;用时0ms.
+2016-03-21 19:44:03,190 [AWT-EventQueue-0] INFO  java.lang.Class                          -   点击开始，执行任务
+2016-03-21 19:44:04,540 [AWT-EventQueue-0] INFO  java.lang.Class                          -   点击停止，退出任务
